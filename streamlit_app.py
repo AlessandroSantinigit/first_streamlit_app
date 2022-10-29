@@ -57,6 +57,11 @@ def get_fruit_load_list():
     my_cur.execute("SELECT * from fruit_load_list")
     return my_cur.fetchcall()
   
+def insert_row_snowflake(new_fruit):
+  with my_cnx.cursor() as my_cur:
+    my_cur.execute("insert into load_list_value('" + ??? + "')")
+    return "Thanks for adding" + new_fruit
+  
 #Add a button to load the fruit
 if streamlit.button('Get Fruit Load List'):
   my_data_rows = my_cur.fetchall()
